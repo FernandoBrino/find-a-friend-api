@@ -35,7 +35,7 @@ model Org {
 model Pet {
   id          String  @id @default(uuid())
   name        String
-  description String
+  description String?
   age         PetAge
   size        PetSize
 
