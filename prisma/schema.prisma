@@ -27,7 +27,7 @@ model Org {
   email String @unique
   phone String
   city  String
-  Pet   Pet[]
+  pets  Pet[]
 
   @@map("orgs")
 }
