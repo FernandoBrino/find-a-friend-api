@@ -22,12 +22,13 @@ enum PetAge {
 }
 
 model Org {
-  id    String @id @default(uuid())
-  name  String
-  email String @unique
-  phone String
-  city  String
-  pets  Pet[]
+  id            String @id @default(uuid())
+  name          String
+  password_hash String
+  email         String @unique
+  phone         String
+  city          String
+  pets          Pet[]
 
   @@map("orgs")
 }
