@@ -15,6 +15,16 @@ export class InMemoryOrgsRepository implements OrgsRepository {
     return org;
   }
 
+  async findByEmail(email: string) {
+    const org = this.items.find((item) => item.email === email);
+
+    if (!org) {
+      return null;
+    }
+
+    return org;
+  }
+
   async findManyByCity(city: string) {
     const orgs = this.items.filter((item) => item.city === city);
 
@@ -25,7 +35,7 @@ export class InMemoryOrgsRepository implements OrgsRepository {
     const org = {
       id: data.id ?? randomUUID(),
       name: data.name,
-      email: data.name,
+      email: data.email,
       phone: data.phone,
       city: data.city,
     };
