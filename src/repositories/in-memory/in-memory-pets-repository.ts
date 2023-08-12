@@ -25,6 +25,14 @@ export class InMemoryPetsRepository implements PetsRepository {
     return pets;
   }
 
+  async searchMany(query: string) {
+    const pets = this.items.filter(
+      (item) => item.age.includes(query) || item.size.includes(query)
+    );
+
+    return pets;
+  }
+
   async create(data: Prisma.PetUncheckedCreateInput) {
     const pet = {
       id: data.id ?? randomUUID(),
