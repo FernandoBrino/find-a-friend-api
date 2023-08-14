@@ -31,11 +31,10 @@ export class PrismaPetsRepository implements PetsRepository {
     return pets;
   }
 
-  async searchMany(query: $Enums.PetAge) {
-    const pets = await prisma.$queryRaw<Pet[]>`
-        SELECT * FROM pets
-        WHERE age = ${query} OR size = ${query}
-    `;
+  async searchMany(query: any) {
+    const pets = await prisma.pet.findMany({
+      include: query,
+    });
 
     return pets;
   }
