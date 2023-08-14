@@ -1,6 +1,5 @@
 import { describe, beforeEach, it, expect } from "vitest";
 import { InMemoryPetsRepository } from "@/repositories/in-memory/in-memory-pets-repository";
-import { GetPetById } from "./get-pet-by-id";
 import { SearchPetsService } from "./search-pets";
 
 let petsRepository: InMemoryPetsRepository;
